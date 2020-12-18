@@ -1,47 +1,46 @@
 package Snake;
 
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-import java.util.Random;
+import java.awt.*; //imports the AWT framework
+import javax.swing.*; //imports the Swing framework
+import java.util.Random; //imports the Ramdom() method from the Java Utility package
 
-public class GamePanel extends JPanel implements ActionListener{
+public class GamePanel extends JPanel implements ActionListener{ //The ActionListener interface manages all the action events which take place, like pressing of keys
 
 	static final int SCREEN_WIDTH = 800;
 	static final int SCREEN_HEIGHT = 800;
-	static final int UNIT_SIZE = 35;
+	static final int UNIT_SIZE = 35; //This determines the size of one custom pixel
 	static final int GAME_UNITS = (SCREEN_WIDTH*SCREEN_HEIGHT)/(UNIT_SIZE*UNIT_SIZE);
-	static final int DELAY = 75;
+	static final int DELAY = 75; // this determines the movement speed of the snake
 	final int x[] = new int[GAME_UNITS];
 	final int y[] = new int[GAME_UNITS];
-	int bodyParts = 6;
+	int bodyParts = 6; // the initial body units of the snake
 	int applesEaten;
-	int appleX;
-	int appleY;
+	int appleX; //holds the x-coordinate of the location where the apple will be spawned
+	int appleY; //holds the y-coordinate of the location where the apple will be spawned
 	char direction = 'R';
 	boolean running = false;
 	Timer timer;
 	Random random;
 	
-	GamePanel(){
+	GamePanel(){ //constructor
 		random = new Random();
 		this.setPreferredSize(new Dimension(SCREEN_WIDTH,SCREEN_HEIGHT));
 		this.setBackground(Color.black);
-		this.setFocusable(true);
-		this.addKeyListener(new MyKeyAdapter());
+		this.setFocusable(true); //any event will be dispatched only to the components which have focus, so this line makes sure that the panel has focus
+		this.addKeyListener(new MyKeyAdapter()); //the KeyListener() method notes the keys which are being pressed
 		startGame();
 	}
 	public void startGame() {
 		newApple();
 		running = true;
-		timer = new Timer(DELAY,this);
+		timer = new Timer(DELAY,this); //the Timer() method fires any action event(s) at specified interval
 		timer.start();
 	}
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		draw(g);
 	}
-	public void draw(Graphics g) {
+	public void draw(Graphics g) { //this functions handles all the colouring and graphics
 		
 		if(running) {
 			/* The following snippet of code is to display grid lines on the game panel
@@ -159,7 +158,7 @@ public class GamePanel extends JPanel implements ActionListener{
 		repaint();
 	}
 	
-	public class MyKeyAdapter extends KeyAdapter{
+	public class MyKeyAdapter extends KeyAdapter{ //KeyAdapter() is an abstract adapter class for receiving keyboard actions
 		@Override
 		public void keyPressed(KeyEvent e) {
 			switch(e.getKeyCode()) {

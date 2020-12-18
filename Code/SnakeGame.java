@@ -1,4 +1,4 @@
-package Snake;
+package Snake; //Package name(the name used while creating the project)
 
 public class SnakeGame {
 
