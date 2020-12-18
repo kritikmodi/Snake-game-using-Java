@@ -14,11 +14,11 @@ A simple snake game made using Java GUI frameworks : `Swing` and `AWT`.
 
 * Clone this repository locally using `git clone https://github.com/kritikmodi/Snake-game-using-Java`
 * Open **Eclipse** IDE and create a new project.
-> Download the Eclipse IDE [here]!(https://www.eclipse.org/downloads/download.php?file=/oomph/epp/2020-12/R/eclipse-inst-jre-win64.exe).
+     > Download the Eclipse IDE [here](https://www.eclipse.org/downloads/download.php?file=/oomph/epp/2020-12/R/eclipse-inst-jre-win64.exe).
 * Inside the new project created, create 3 classes and copy paste the codes of the 3 classes into the 3 classes.
-> Remember to place the classes under the package you created for this project, and not the default one.
+     > Remember to place the classes under the package you created for this project, and not the default one.
 * Run the program.
-> Refer to the documentation if you face any error.
+     > Refer to the documentation if you face any error.
 
 
 
