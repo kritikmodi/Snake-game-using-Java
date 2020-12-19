@@ -1,6 +1,7 @@
 package Snake;
 
 import java.awt.*; //imports the AWT framework
+import java.awt.event.*;
 import javax.swing.*; //imports the Swing framework
 import java.util.Random; //imports the Ramdom() method from the Java Utility package
 
